@@ -1,0 +1,498 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f7f7f7;
+    color: #27251F;
+}
+
+header {
+    background-color: #DB0007;
+    padding: 16px 24px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+}
+
+.header-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.m-logo {
+    color: #FFBC0D;
+    font-size: 32px;
+    font-weight: 900;
+    line-height: 1;
+}
+
+h1 {
+    color: #FFBC0D;
+    font-size: 26px;
+    letter-spacing: 0.5px;
+}
+
+select {
+    padding: 8px 16px;
+    border-radius: 6px;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #FFBC0D;
+    color: #27251F;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+main {
+    max-width: 1000px;
+    margin: 24px auto 60px;
+    padding: 0 16px;
+}
+
+.slideshow-section {
+    margin-bottom: 40px;
+}
+
+.slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    background-color: #000;
+}
+
+.mySlides {
+    display: none;
+}
+
+.mySlides img {
+    width: 100%;
+    height: 380px;
+    object-fit: cover;
+    display: block;
+}
+
+.fade {
+    animation-name: fade;
+    animation-duration: 0.8s;
+}
+
+@keyframes fade {
+    from { opacity: 0.4; }
+    to { opacity: 1; }
+}
+
+.menu-section h2, .payment-section h2 {
+    font-size: 22px;
+    margin-bottom: 18px;
+    border-left: 5px solid #DB0007;
+    padding-left: 10px;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.menu-card {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 16px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    user-select: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.menu-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+}
+
+.menu-card:active {
+    transform: scale(0.97);
+}
+
+.menu-card img {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    margin-bottom: 12px;
+    pointer-events: none;
+}
+
+.menu-card p {
+    font-weight: bold;
+    font-size: 15px;
+    color: #27251F;
+}
+
+.menu-card .price {
+    font-size: 14px;
+    color: #DB0007;
+    font-weight: 700;
+    margin-top: 4px;
+}
+
+.menu-card .badge {
+    margin-top: 8px;
+    font-size: 11px;
+    padding: 3px 8px;
+    border-radius: 12px;
+    background-color: #FFBC0D;
+    color: #27251F;
+    font-weight: bold;
+}
+
+/* Receipt Styles */
+.receipt-section {
+    margin: 50px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.receipt-paper {
+    width: 100%;
+    max-width: 380px;
+    background: #ffffff;
+    padding: 30px 24px 40px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    font-family: 'Courier New', Courier, monospace;
+    color: #111;
+}
+
+.receipt-title {
+    text-align: center;
+    font-size: 26px;
+    font-weight: 900;
+    letter-spacing: 3px;
+    margin: 16px 0;
+    color: #111;
+}
+
+.receipt-cut-line {
+    border-bottom: 2px dashed #333;
+    margin-bottom: 6px;
+}
+
+.receipt-dashed-line {
+    border-bottom: 2px dashed #444;
+    margin: 14px 0;
+}
+
+.receipt-items {
+    min-height: 24px;
+    margin: 14px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.receipt-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.receipt-row.bold {
+    font-weight: 900;
+    font-size: 15px;
+}
+
+.receipt-thank-you {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    margin: 16px 0;
+}
+
+.receipt-barcode {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+.barcode-bars {
+    width: 220px;
+    height: 60px;
+    background: repeating-linear-gradient(
+        90deg,
+        #111 0px,
+        #111 2px,
+        transparent 2px,
+        transparent 4px,
+        #111 4px,
+        #111 7px,
+        transparent 7px,
+        transparent 9px,
+        #111 9px,
+        #111 10px,
+        transparent 10px,
+        transparent 13px,
+        #111 13px,
+        #111 17px,
+        transparent 17px,
+        transparent 19px
+    );
+}
+
+/* Drivers & Payment Section */
+.payment-section {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.payment_container {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 30px;
+    width: 100%;
+    max-width: 580px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.drivers-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 10px;
+}
+
+.driver-card {
+    background: #fdfdfd;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 12px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.driver-card:hover {
+    border-color: #DB0007;
+}
+
+.driver-card.selected {
+    border-color: #DB0007;
+    background-color: #fff8f8;
+}
+
+.driver-card img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 6px;
+}
+
+.driver-card p {
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #333333;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    font-family: inherit;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+input[type="text"]:focus {
+    border-color: #DB0007;
+}
+
+button#pay-button {
+    background-color: #DB0007;
+    color: #FFBC0D;
+    border: none;
+    padding: 14px 20px;
+    font-size: 17px;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+button#pay-button:hover {
+    background-color: #b70005;
+}
+
+button#pay-button:active {
+    transform: scale(0.99);
+}
+
+/* Order Confirmation Section */
+.confirmation-section {
+    display: none;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.confirmation_container {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 30px;
+    width: 100%;
+    max-width: 580px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border-top: 6px solid #28a745;
+}
+
+.confirmation-banner {
+    text-align: center;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #eee;
+}
+
+.confirmation-check {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background-color: #28a745;
+    color: #fff;
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.confirmation-banner h2 {
+    font-size: 24px;
+    color: #27251F;
+    margin-bottom: 6px;
+}
+
+.confirmation-banner p {
+    font-size: 14px;
+    color: #555;
+}
+
+.assigned-driver-box {
+    text-align: center;
+}
+
+.assigned-driver-box h3,
+.confirmation-details h3 {
+    font-size: 17px;
+    margin-bottom: 12px;
+    color: #27251F;
+    border-left: 4px solid #DB0007;
+    padding-left: 8px;
+    text-align: left;
+}
+
+.assigned-driver-card {
+    max-width: 220px;
+    margin: 0 auto;
+    cursor: default;
+}
+
+.assigned-driver-card img {
+    width: 80px;
+    height: 80px;
+}
+
+.assigned-driver-card p {
+    font-size: 16px;
+    margin-bottom: 4px;
+}
+
+.driver-status {
+    display: inline-block;
+    font-size: 12px;
+    background-color: #FFBC0D;
+    color: #27251F;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-weight: bold;
+}
+
+.confirmation-details {
+    background: #fafafa;
+    border-radius: 8px;
+    padding: 16px;
+    border: 1px solid #eee;
+}
+
+.confirmation-details p {
+    font-size: 14px;
+    margin-bottom: 6px;
+    color: #333;
+}
+
+.confirmation-items-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 12px;
+    padding-bottom: 12px;
+    border-bottom: 1px dashed #ccc;
+}
+
+.confirmation-item-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+}
+
+.confirmation-total-row {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    font-size: 16px;
+    color: #DB0007;
+}

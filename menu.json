@@ -1,0 +1,34 @@
+{
+  "foods": [
+    { "name": "Chicken McGrilled", "price": 15.00, "img": "McGrilled.png", "category": "Food" },
+    { "name": "Cheeseburger", "price": 10.00, "img": "Cheeseburger.png", "category": "Food" },
+    { "name": "McChicken", "price": 12.00, "img": "McChicken.png", "category": "Food" }
+  ],
+  "drinks": [
+    { "name": "Sprite", "price": 5.00, "img": "Sprite.png", "category": "Drink" },
+    { "name": "Orange Juice", "price": 6.00, "img": "Orange.png", "category": "Drink" },
+    { "name": "Coffee", "price": 4.00, "img": "Coffee.png", "category": "Drink" }
+  ],
+  "drivers": [
+    { "name": "John Doe", "img": "Driver1.png" },
+    { "name": "Jane Smith", "img": "Driver2.png" },
+    { "name": "Mike Johnson", "img": "Driver3.png" }
+  ],
+  "slides": [
+    { "img": "Mc1.jpg", "alt": "Featured Item 1" },
+    { "img": "Mc2.jpg", "alt": "Featured Item 2" },
+    { "img": "Mc3.jpg", "alt": "Featured Item 3" }
+  ],
+
+  "First Name": "Nombre",
+  "lastName": "Apellido",
+  "Card Number": "",
+  "isOnline": true,
+  "address": {
+    "city": "Ocean",
+    "zipCode": "12345"
+  },
+  "skills": ["swimming", "coding", "debugging"]
+
+
+}

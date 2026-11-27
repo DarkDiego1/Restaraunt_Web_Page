@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>McDonald's</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <div class="header-brand">
+                <span class="m-logo">M</span>
+                <h1>McDonald's</h1>
+            </div>
+
+            <select name="Category" id="Category" onchange="filterMenu()">
+                <option value="Food">Food</option>
+                <option value="Drinks">Drinks</option>
+                <option value="All">All</option>
+            </select>
+        </div>
+    </header>
+
+    <main>
+        <section class="slideshow-section">
+            <div class="slideshow-container">
+                <div class="mySlides fade">
+                    <img src="Mc1.jpg" alt="Featured Item 1">
+                </div>
+
+                <div class="mySlides fade">
+                    <img src="Mc2.jpg" alt="Featured Item 2">
+                </div>
+
+                <div class="mySlides fade">
+                    <img src="Mc3.jpg" alt="Featured Item 3">
+                </div>
+            </div>
+        </section>
+
+        <section class="menu-section">
+            <h2>Our Menu</h2>
+            <div id="demo" class="menu-grid"></div>
+        </section>
+
+        <section class="receipt-section">
+            <div class="receipt-paper">
+                <div class="receipt-cut-line"></div>
+                <div class="receipt-cut-line"></div>
+
+                <h2 class="receipt-title">RECEIPT</h2>
+
+                <div class="receipt-cut-line"></div>
+                <div class="receipt-cut-line"></div>
+
+                <div id="receipt-items" class="receipt-items"></div>
+
+                <div class="receipt-dashed-line"></div>
+
+                <div class="receipt-row bold">
+                    <span>TOTAL AMOUNT</span>
+                    <span id="receipt-total">$ 0.00</span>
+                </div>
+
+                <div class="receipt-dashed-line"></div>
+
+                <div class="receipt-row bold">
+                    <span>CASH</span>
+                    <span id="receipt-cash">$ 0.00</span>
+                </div>
+                <div class="receipt-row bold">
+                    <span>CHANGE</span>
+                    <span id="receipt-change">$ 0.00</span>
+                </div>
+
+                <div class="receipt-dashed-line"></div>
+
+                <div class="receipt-thank-you">THANK YOU</div>
+
+                <div class="receipt-dashed-line"></div>
+
+                <div class="receipt-barcode">
+                    <div class="barcode-bars"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="payment-section">
+            <form id="payment-form" class="payment_container" onsubmit="return handlePayment(event)" action="Data.php" method="POST">
+                <h2>Checkout & Delivery</h2>
+                
+                <input type="hidden" id="cart_data" name="cart_data">
+                <input type="hidden" id="order_total" name="order_total">
+                
+                <div class="form-group">
+                    <label for="Card_Number">Card Number:</label>
+                    <input type="text" id="Card_Number" name="Card_Number" placeholder="1234 5678 9012 3456" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="Card_Holder">Card Holder Name:</label>
+                    <input type="text" id="Card_Holder" name="Card_Holders" placeholder="John Doe" required>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="Card_Expiration">Expiration (MM/YY):</label>
+                        <input type="text" id="Card_Expiration" name="Card_Expiration" placeholder="12/28" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="Card_CVV">CVV:</label>
+                        <input type="text" id="Card_CVV" name="Card_CVV" placeholder="123" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="Nombre">First Name:</label>
+                        <input type="text" id="Nombre" name="Nombre" placeholder="First Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="apellidos">Last Name:</label>
+                        <input type="text" id="apellidos" name="apellidos" placeholder="Last Name" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="Direccion">Address:</label>
+                    <input type="text" id="Direccion" name="Direccion" placeholder="Enter your street address" required>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="Postal">Postal Code:</label>
+                        <input type="text" id="Postal" name="Postal" placeholder="12345" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="city">City:</label>
+                        <input type="text" id="city" name="city" placeholder="City" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="Telefono">Phone Number:</label> 
+                    <input type="text" id="Telefono" name="Telefono" placeholder="555-123-4567" required>
+                </div>
+
+                <button type="submit" id="pay-button">Checkout</button>
+            </form>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
